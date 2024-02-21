@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello world</h1>
+    <header>
+        <div class="header">
+            <h1>Learnable To-do App</h1>
+            <p class="add-todo">Add to-do below</p>
+        </div>
+        <div class="todo-inout-div">
+            <input type="text" placeholder="Add new task" class="task-input">
+            <input type="date" class="date-input">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div class="error">
+            <p class="error-message"></p>
+        </div>
+    </header>
+
+    <section>
+        <div class="list-cont">
+            <ul>
+
+            </ul>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
