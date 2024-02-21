@@ -1,6 +1,6 @@
 const taskInput = document.querySelector(".task-input");
 const dateInput = document.querySelector(".date-input");
-const ulCont = document.querySelector("ul");
+const olCont = document.querySelector("ol");
 const errorMessage = document.querySelector(".error-message");
 
 let taskList = [];
@@ -18,7 +18,7 @@ function displayTasks() {
                         </div>`;
         todoListHTML += addList;
     });
-    ulCont.innerHTML = todoListHTML;
+    olCont.innerHTML = todoListHTML;
 }
 
 // Function to CREATE a task
