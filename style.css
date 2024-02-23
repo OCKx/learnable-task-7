@@ -2,24 +2,27 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 100px;
 }
 
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 5px;
 }
 
-.todo-input-div {
+.todo-inout-div, footer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .task-input {
     padding: 10px;
+    width: 400px;
     margin-right: 10px;
 }
 
@@ -45,22 +48,49 @@ button:hover {
     font-style: italic;
 }
 
+.list-cont {
+    padding: 100px;
+    align-items: center;
+}
+
+ol{
+    background-color: rgba(229, 219, 219, 0.642);
+    padding: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+ol li{
+    border-bottom: 1px solid black;
+}
+
 .list {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+}
+
+.button-div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    justify-content: flex-end;
 }
 
 .delete {
     background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
 }
-
 .delete:hover {
     background-color: #d32f2f;
+}
+
+.edit {
+    background-color: rgba(64, 64, 241, 0.801);
+}
+.edit:hover {
+    background-color: blue;
+}
+
+.note-div {
+    background-color: rgba(0, 0, 0, 0.82);
+    color: white;
+    padding: 0 20px;
+    border-radius: 20px;
 }

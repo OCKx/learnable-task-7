@@ -1,6 +1,6 @@
 const taskInput = document.querySelector(".task-input");
 const dateInput = document.querySelector(".date-input");
-const ulCont = document.querySelector("ul");
+const olCont = document.querySelector("ol");
 const errorMessage = document.querySelector(".error-message");
 
 let taskList = [];
@@ -11,14 +11,26 @@ let taskList = [];
 function displayTasks() {
     let todoListHTML = '';
     taskList.forEach((task, index) => {
-        let addList = `<div class="list">
-                            <li>${task.name}</li>
-                            <p>${task.date}</p>
-                            <button onclick="deleteTask(${index})" class="delete">X</button>
-                        </div>`;
-        todoListHTML += addList;
+        let listItem = `
+            <li>
+                <div class="list">
+                    <p>${task.name}</p>
+                    <p>${task.date}</p>
+                    <div class="button-div">
+                        <button onclick="editTask(${index})" class="edit">Edit</button>
+                        <button onclick="deleteTask(${index})" class="delete">Delete</button>
+                    </div>
+                </div>
+                <form class="edit-form" style="display: none;">
+                    <input type="text" class="edit-task-input" value="${task.name}">
+                    <input type="date" class="edit-date-input" value="${task.date}">
+                    <button type="submit" onclick="updateTask(event, ${index})" class="update">Update</button>
+                </form>
+            </li>
+        `;
+        todoListHTML += listItem;
     });
-    ulCont.innerHTML = todoListHTML;
+    olCont.innerHTML = todoListHTML;
 }
 
 // Function to CREATE a task
@@ -46,7 +58,31 @@ function deleteTask(index) {
     displayTasks();
 }
 
-// Function to UPDATE a task (not implemented yet)
-function updateTask(index, newName, newDate) {
-    // Implement update functionality here
+// Function to EDIT a task
+function editTask(index) {
+    const editForm = document.querySelectorAll(".edit-form");
+    const listItem = editForm[index].parentElement;
+
+    editForm.forEach((form) => {
+        form.style.display = "none";
+    });
+    listItem.querySelector(".list").style.display = "none";
+    editForm[index].style.display = "block";
 }
+
+// Function to UPDATE a task
+function updateTask(event, index) {
+    event.preventDefault();
+    const newName = event.target.parentElement.querySelector(".edit-task-input").value;
+    const newDate = event.target.parentElement.querySelector(".edit-date-input").value;
+
+    if (newName.trim() !== "" && newDate.trim() !== "") {
+        taskList[index].name = newName;
+        taskList[index].date = newDate;
+        displayTasks();
+    } else {
+        alert("Task and Date cannot be empty");
+    }
+}
+
+displayTasks();

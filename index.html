@@ -9,26 +9,42 @@
 <body>
     <header>
         <div class="header">
-            <h1>Learnable To-do App</h1>
-            <p class="add-todo">Add to-do below</p>
-        </div>
-        <div class="todo-inout-div">
-            <input type="text" placeholder="Add new task" class="task-input">
-            <input type="date" class="date-input">
-            <button onclick="addTask()">Add</button>
-        </div>
-        <div class="error">
-            <p class="error-message"></p>
+            <h3>Learnable To-do App</h3>
         </div>
     </header>
 
     <section>
-        <div class="list-cont">
-            <ul>
-
-            </ul>
+        <div class="todo-inout-div">
+            <div class="sub-header">
+                <h3 class="add-todo">Add to-do below</h3>
+            </div>
+            <div class="add-div">
+                <input type="text" placeholder="Add new task" class="task-input">
+                <input type="date" class="date-input">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <div class="error">
+                <p class="error-message"></p>
+            </div>
         </div>
     </section>
+
+    <section>
+        <div class="list-cont">
+            <ol>
+
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <div class="note-div">
+            <h4>NOTE</h4>
+            <p>To view SOURCE CODE right click on the web page and then click 'view page source'
+                (then click on script.js below, to view javascript source code)
+            </p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
