@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 100px;
+    background-image: linear-gradient(white, white, white, black);
 }
 
 .header {
