@@ -63,9 +63,18 @@ ol li{
     border-bottom: 1px solid black;
 }
 
-.list {
+.list-header {
+    background-color: rgb(250, 214, 214);
+
+}
+
+.list-header .h {
+    padding-left: 50px;
+}
+
+.list, .list-header {
     display: grid;
-    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-columns: 50% 30% 20%;
 }
 
 .button-div {
@@ -93,4 +102,16 @@ ol li{
     color: white;
     padding: 0 20px;
     border-radius: 20px;
+}
+
+.edit-form{
+    grid-template-columns: 3fr 2fr 1fr;
+}
+
+.edit-task-input{
+    padding: 10px;
+}
+
+.edit-date-input {
+    padding: 10px;
 }

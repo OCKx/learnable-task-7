@@ -67,7 +67,7 @@ function editTask(index) {
         form.style.display = "none";
     });
     listItem.querySelector(".list").style.display = "none";
-    editForm[index].style.display = "block";
+    editForm[index].style.display = "grid";
 }
 
 // Function to UPDATE a task
